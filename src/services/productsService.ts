@@ -390,7 +390,7 @@ export function getMarketProduct(exchangeId, symbol, noStable?: boolean) {
   } else if (exchangeId === 'COINBASE' && type === 'perp') {
     localSymbol = localSymbol.replace(COINBASE_INTX_REGEX, '')
   } else if (exchangeId === 'HYPERLIQUID') {
-    localSymbol += 'USDC'
+    localSymbol = localSymbol.replace(/^k/, '') + 'USD'
   }
 
   localSymbol = localSymbol
